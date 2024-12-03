@@ -1,5 +1,7 @@
 package btc.com.entities;
+
 import jakarta.persistence.*;
+
 import java.util.List;
 
 @Entity(name = "GameMap")
@@ -14,6 +16,9 @@ public class GameMap {
 
     @OneToMany(mappedBy = "gameMap", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<MapField> mapFields;
+
+    @OneToOne(mappedBy = "gameMap") // Defines the inverse side of the relationship
+    private Game game;
 
     public Long getId() {
         return id;
@@ -37,5 +42,13 @@ public class GameMap {
 
     public void setMapFields(List<MapField> mapFields) {
         this.mapFields = mapFields;
+    }
+
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
     }
 }

@@ -11,7 +11,8 @@ public class Game {
     private Long id;
     @Column(name = "round")
     private int round;
-    @Column(name = "game_map")
+    @OneToOne(cascade = CascadeType.ALL, optional = false)
+    @JoinColumn(name = "game_map_id", referencedColumnName = "game_map_id")
     private GameMap gameMap;
 
     public Long getId() {

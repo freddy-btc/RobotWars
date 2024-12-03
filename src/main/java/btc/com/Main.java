@@ -17,6 +17,11 @@ public class Main {
     public static void main(String[] args) {
         SessionFactory factory = new Configuration()
                 .configure("hibernate.cfg.xml")
+                .addAnnotatedClass(Game.class)
+                .addAnnotatedClass(GameMap.class)
+                .addAnnotatedClass(MapField.class)
+                .addAnnotatedClass(Robot.class)
+                .addAnnotatedClass(Item.class)
                 .buildSessionFactory();
 
         try (Session session = factory.openSession()) {
@@ -40,7 +45,7 @@ public class Main {
             map.setMapFields(fields);
 
 
-            session.persist(field1);
+            session.persist(map);
 
             session.getTransaction().commit();
             System.out.println("GameMap and its fields saved successfully!");
