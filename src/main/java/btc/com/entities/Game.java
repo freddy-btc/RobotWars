@@ -2,15 +2,39 @@ package btc.com.entities;
 
 import jakarta.persistence.*;
 
-@Entity
-@Table(name = "Game")
+@Entity(name = "Game")
+@Table(name = "game")
 public class Game {
+    @Column(name= "game_id")
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     @Column(name = "round")
     private int round;
-    @Column(name = "map")
-    private Map map;
+    @Column(name = "game_map")
+    private GameMap gameMap;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public int getRound() {
+        return round;
+    }
+
+    public void setRound(int round) {
+        this.round = round;
+    }
+
+    public GameMap getGameMap() {
+        return gameMap;
+    }
+
+    public void setGameMap(GameMap gameMap) {
+        this.gameMap = gameMap;
+    }
 }
