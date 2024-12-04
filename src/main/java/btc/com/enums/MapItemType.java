@@ -1,7 +1,6 @@
 package btc.com.enums;
 
-public enum MapFieldType {
-    EMPTY,
+public enum MapItemType {
     ROBOT,
     ITEM,
     WALL,

@@ -2,18 +2,22 @@ package btc.com.entities;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity(name = "Game")
 @Table(name = "game")
 public class Game {
-    @Column(name= "game_id")
+    @Column(name = "game_id")
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Column(name = "round")
-    private int round;
-    @OneToOne(cascade = CascadeType.ALL, optional = false)
-    @JoinColumn(name = "game_map_id", referencedColumnName = "game_map_id")
-    private GameMap gameMap;
+    @ManyToOne
+    @JoinColumn(name = "map_id", nullable = false)
+    private Map map;
+    @Column(name = "moves")
+    @OneToMany(mappedBy = "game", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Move> moves = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -23,19 +27,20 @@ public class Game {
         this.id = id;
     }
 
-    public int getRound() {
-        return round;
+    public Map getMap() {
+        return map;
     }
 
-    public void setRound(int round) {
-        this.round = round;
+    public void setMap(Map map) {
+        this.map = map;
     }
 
-    public GameMap getGameMap() {
-        return gameMap;
+    public List<Move> getMoves() {
+        return moves;
     }
 
-    public void setGameMap(GameMap gameMap) {
-        this.gameMap = gameMap;
+    public void addMove(Move move) {
+        this.moves.add(move);
+        move.setGame(this);
     }
 }

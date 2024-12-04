@@ -1,5 +1,7 @@
 package btc.com.entities;
 import jakarta.persistence.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity(name = "Robot")
@@ -19,10 +21,8 @@ public class Robot {
     private int attackRange;
     @Column(name = "movement_range")
     private int movementRange;
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "item_id")
-    @Column(name = "active_items")
-    private List<Item> activeItems;
+    @OneToMany(mappedBy = "robot", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<RobotManipulator> robotManipulator = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -72,11 +72,11 @@ public class Robot {
         this.movementRange = movementRange;
     }
 
-    public List<Item> getActiveItems() {
-        return activeItems;
+    public List<RobotManipulator> getRobotManipulator() {
+        return robotManipulator;
     }
 
-    public void setActiveItems(List<Item> activeItems) {
-        this.activeItems = activeItems;
+    public void setRobotManipulator(List<RobotManipulator> robotManipulator) {
+        this.robotManipulator = robotManipulator;
     }
 }

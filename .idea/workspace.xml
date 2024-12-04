@@ -4,11 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6a671e5-d364-483c-b9b7-63d7865908f9" name="Changes" comment="first commit">
+    <list default="true" id="a6a671e5-d364-483c-b9b7-63d7865908f9" name="Changes" comment="hibernate works">
+      <change afterPath="$PROJECT_DIR$/src/main/java/btc/com/entities/MapItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/btc/com/entities/Move.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/btc/com/entities/RobotManipulator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/btc/com/enums/MoveType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/btc/com/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/btc/com/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/btc/com/entities/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/btc/com/entities/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/btc/com/entities/GameMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/btc/com/entities/GameMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/btc/com/entities/GameMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/btc/com/entities/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/btc/com/entities/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/btc/com/entities/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/btc/com/entities/MapField.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/btc/com/entities/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/btc/com/entities/Robot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/btc/com/enums/MapFieldType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/btc/com/enums/MapItemType.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +26,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -104,6 +112,9 @@
       <workItem from="1733153654969" duration="1496000" />
       <workItem from="1733217589244" duration="4980000" />
       <workItem from="1733222686231" duration="5260000" />
+      <workItem from="1733294622695" duration="15000" />
+      <workItem from="1733296518648" duration="3135000" />
+      <workItem from="1733299662527" duration="11307000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -113,7 +124,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733152994510</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="hibernate works">
+      <option name="closed" value="true" />
+      <created>1733236785781</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1733236785781</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,17 +151,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/btc/com/Main.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="hibernate works" />
+    <option name="LAST_COMMIT_MESSAGE" value="hibernate works" />
   </component>
 </project>

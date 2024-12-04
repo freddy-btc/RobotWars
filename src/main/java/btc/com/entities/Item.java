@@ -3,23 +3,23 @@ package btc.com.entities;
 import btc.com.enums.ItemType;
 import jakarta.persistence.*;
 
-@Entity(name ="Item")
+@Entity(name = "Item")
 @Table(name = "item")
 public class Item {
-    @Column(name ="item_id")
+    @Column(name = "item_id")
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @Column(name = "item_type")
     @Enumerated(EnumType.STRING)
-    @Column(name = "type")
-    private ItemType type;
-    @Column(name = "value")
-    private int value;
+    private ItemType itemType;
+    @Column(name = "manipulation_value")
+    private int manipulationValue;
     @Column(name = "duration")
     private int duration;
     @ManyToOne
-    @JoinColumn(name="robot_id", nullable=true)
-    private Robot robot;
+    @JoinColumn(name = "robot_manipulator_id", nullable = false)
+    private RobotManipulator robotManipulator;
 
     public Long getId() {
         return id;
@@ -29,20 +29,20 @@ public class Item {
         this.id = id;
     }
 
-    public ItemType getType() {
-        return type;
+    public ItemType getItemType() {
+        return itemType;
     }
 
-    public void setType(ItemType type) {
-        this.type = type;
+    public void setItemType(ItemType itemType) {
+        this.itemType = itemType;
     }
 
-    public int getValue() {
-        return value;
+    public int getManipulationValue() {
+        return manipulationValue;
     }
 
-    public void setValue(int value) {
-        this.value = value;
+    public void setManipulationValue(int manipulationValue) {
+        this.manipulationValue = manipulationValue;
     }
 
     public int getDuration() {
@@ -53,11 +53,11 @@ public class Item {
         this.duration = duration;
     }
 
-    public Robot getRobot() {
-        return robot;
+    public RobotManipulator getRobotManipulator() {
+        return robotManipulator;
     }
 
-    public void setRobot(Robot robot) {
-        this.robot = robot;
+    public void setRobotManipulator(RobotManipulator robotManipulator) {
+        this.robotManipulator = robotManipulator;
     }
 }
